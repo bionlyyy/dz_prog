@@ -5,7 +5,7 @@ def process_files():
     def read_numbers(filename):
         numbers = []
         try:
-            with open(filename, 'r', encoding='utf-16') as f:  # пробуем UTF-16 (типично для Windows)
+            with open(filename, 'r', encoding='utf-16') as f:  
                 for line in f:
                     for item in line.split():
                         try:
@@ -14,7 +14,7 @@ def process_files():
                             print(f"Пропущено нечисловое значение: '{item}' в {filename}")
         except UnicodeError:
             try:
-                with open(filename, 'r', encoding='utf-8') as f:  # пробуем UTF-8
+                with open(filename, 'r', encoding='utf-8') as f:  
                     for line in f:
                         for item in line.split():
                             try:
